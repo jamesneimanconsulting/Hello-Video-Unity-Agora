@@ -27,7 +27,7 @@ public class HelloUnityVideo : MonoBehaviour {
 		}
 
 		// init engine
-		mRtcEngine = IRtcEngineForGaming.getEngine (appId);
+		mRtcEngine = IRtcEngine.getEngine (appId);
 
 		// enable log
 		mRtcEngine.SetLogFilter (LOG_FILTER.DEBUG | LOG_FILTER.INFO | LOG_FILTER.WARNING | LOG_FILTER.ERROR | LOG_FILTER.CRITICAL);
@@ -77,7 +77,7 @@ public class HelloUnityVideo : MonoBehaviour {
 
 		// delete
 		if (mRtcEngine != null) {
-			IRtcEngineForGaming.Destroy ();
+			IRtcEngine.Destroy ();
 			mRtcEngine = null;
 		}
 	}
@@ -96,7 +96,7 @@ public class HelloUnityVideo : MonoBehaviour {
 	}
 
 	// instance of agora engine
-	public IRtcEngineForGaming mRtcEngine;
+	public IRtcEngine mRtcEngine;
 
 	// implement engine callbacks
 
