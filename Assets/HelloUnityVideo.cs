@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using agora_gaming_rtc;
+using UnityEngine.UI;
 
 // this is an example of using Agora Unity SDK
 // It demonstrates:
@@ -57,6 +58,10 @@ public class HelloUnityVideo : MonoBehaviour {
 		Debug.Log ("initializeEngine done");
 	}
 
+	public string getSdkVersion () {
+		return IRtcEngine.GetSdkVersion ();
+	}
+
 	public void leave()
 	{
 		Debug.Log ("calling leave");
@@ -105,6 +110,8 @@ public class HelloUnityVideo : MonoBehaviour {
 	private void onJoinChannelSuccess (string channelName, uint uid, int elapsed)
 	{
 		Debug.Log ("JoinChannelSuccessHandler: uid = " + uid);
+		GameObject textVersionGameObject = GameObject.Find ("VersionText");
+		textVersionGameObject.GetComponent<Text> ().text = "Version : " + getSdkVersion ();
 	}
 
 	// When a remote user joined, this delegate will be called. Typically
