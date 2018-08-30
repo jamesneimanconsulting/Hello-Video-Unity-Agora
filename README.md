@@ -61,7 +61,7 @@ When you load `SceneHelloVideo` in Unity, you'll see that the stage contains a c
 
 ![SceneHelloVideo.jpg](images/SceneHelloVideo.jpg)
 
-The scene also contains a **Leave** UI button.
+The scene also contains a **Leave** button.
 
 **Note:** You may have to zoom out and adjust the camera view in order to see the leave button in the stage.
 
@@ -75,7 +75,7 @@ UI object|Description
 ---|---
 Text object|Explanation text for the user to read
 Text input box|Text input box for the user to enter the channel name
-**Join** UI button|Button to join the channel
+**Join** button|Button to join the channel
 
 **Note:** You may have to zoom out and adjust the camera view in order to see the leave button in the stage.
 
@@ -514,7 +514,7 @@ The `onButtonClicked()` method is applied to the **JoinButton** and **LeaveButto
 
 ##### Create the Join Button Method
 
-The `onJoinButtonClicked()` method is applied to the **Join** UI button object.
+The `onJoinButtonClicked()` method is applied to the **Join** button object.
 
 1. Retrieve the `ChannelName` using `GameObject.Find()`
 2. Declare a new `InputField` class using `go.GetComponent<InputField>()`
@@ -544,7 +544,7 @@ The `onJoinButtonClicked()` method is applied to the **Join** UI button object.
 
 ##### Create the Leave Button Method
 
-The `onLeaveButtonClicked()` method is applied to the **Leave** UI button object.
+The `onLeaveButtonClicked()` method is applied to the **Leave** button object.
 
 Ensure `app` is not `null` and execute the following:
 
