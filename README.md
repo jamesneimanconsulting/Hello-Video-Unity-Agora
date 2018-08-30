@@ -158,7 +158,7 @@ The `loadEngine()` method initializes the Agora RTC engine.
 
 3. Enable Agora logging by setting the following log filters using `mRtcEngine.SetLogFilter()`
 
-	Filter|Description
+Filter|Description
 ---|---
 `LOG_FILTER.DEBUG`|Sets the Agora debugging logs
 `LOG_FILTER.INFO`|Sets the Agora information logs
@@ -222,7 +222,7 @@ The `join()` method joins the user to the specified `channel`, sets event listen
 
 	**Note:** These callback are optional for the sample application, but are useful for extending the functionality of the application.
 
-	Event Listener|Method Value|Description
+Event Listener|Method Value|Description
 ---|---|---
 `OnJoinChannelSuccess`|`onJoinChannelSuccess`|Detects when the channel is successfully joined
 `OnUserJoined`|`onUserJoined`|Detects when a user successfully joins the channel
@@ -323,7 +323,7 @@ The `onTransformDelegate()` delegate method detects transform changes for a `Gam
 
 - If `uid` is equal to `0` set the following `transform` properties:
 
-	Transform Property|Value|Description
+Transform Property|Value|Description
 ---|---|---
 `position`|`new Vector3 (0f, 2f, 0f)`|Transform position
 `localScale`|`new Vector3 (2.0f, 2.0f, 1.0f)`|Transform scale on the local level
