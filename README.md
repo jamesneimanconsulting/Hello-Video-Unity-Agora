@@ -35,7 +35,7 @@ In order to build and run the sample application you must obtain an App ID:
 
 3. Unzip the downloaded SDK package and copy the files from the following SDK folders into the associated sample application folders.
 
-	SDK Folder|Application Folder
+SDK Folder|Application Folder
 ---|---
 `libs/Android/`|`Assets/Plugins/Android/`
 `libs/iOS/`|`Assets/Plugins/iOS/`
