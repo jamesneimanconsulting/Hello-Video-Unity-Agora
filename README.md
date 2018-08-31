@@ -17,13 +17,13 @@ This sample app demonstrates the basic Agora SDK feature:
 This section shows you how to prepare and build the Agora React Native wrapper for the sample app.
 
 ### Create an Account and Obtain an App ID
-In order to build and run the sample application you must obtain an App ID: 
+To build and run the sample application you must obtain an App ID:
 
 1. Create a developer account at [agora.io](https://dashboard.agora.io/signin/). Once you finish the signup process, you will be redirected to the Dashboard.
 2. Navigate in the Dashboard tree on the left to **Projects** > **Project List**.
 3. Copy the App ID that you obtained from the Dashboard into a text file. You will use this when you launch the app.
 
-### Update and Run the Sample Application 
+### Update and Run the Sample Application
 
 1. Edit the [`Assets/HelloUnityVideo.cs`](Assets/HelloUnityVideo.cs) file. In the `HelloUnityVideo` class declaration, update `#YOUR APP ID#` with your App ID.
 
@@ -63,7 +63,7 @@ When you load `SceneHelloVideo` in Unity, you'll see that the stage contains a c
 
 The scene also contains a **Leave** button.
 
-**Note:** You may have to zoom out and adjust the camera view in order to see the leave button in the stage.
+**Note:** You may have to zoom out and adjust the camera view to see the **Leave** button in the stage.
 
 ![SceneHelloVideo2.jpg](images/SceneHelloVideo2.jpg)
 
@@ -77,7 +77,7 @@ Text object|Explanation text for the user to read
 Text input box|Text input box for the user to enter the channel name
 **Join** button|Button to join the channel
 
-**Note:** You may have to zoom out and adjust the camera view in order to see the leave button in the stage.
+**Note:** You may have to zoom out and adjust the camera view to see the leave button in the stage.
 
 ![SceneHome.jpg](images/SceneHome.jpg)
 
@@ -95,11 +95,11 @@ using UnityEngine.UI;
 public class HelloUnityVideo : MonoBehaviour {
 
 	...
-	
+
 }
 ```
 
-The remaining code in this section are contained within the `HelloUnityVideo` class declaration.
+The remaining code in this section is contained within the `HelloUnityVideo` class declaration.
 
 - [Declare Global Variables](#declare-global-variables)
 - [Load / Unload Engine Methods](#load-unload-engine-methods)
@@ -118,14 +118,14 @@ The `appId` variable is initialized with the Agora App ID from your Agora Dashbo
 
 ```
 	// PLEASE KEEP THIS App ID IN SAFE PLACE
-	// Get your own App ID at https://dashboard.agora.io/
-	// After you entered the App ID, remove ## outside of Your App ID
+	// Get your App ID at https://dashboard.agora.io/.
+	// After you entered the App ID, remove ## outside of Your App ID.
 	private static string appId = #YOUR APP ID#;
 ```
 
 Declare the `mRtcEngine` variable, which represents the Agora RTC engine for the application.
 
-Initialize `mRemotePeer` to `0` which will track the index of the current remove user for the applicaiton.
+Initialize `mRemotePeer` to `0` which will track the index of the current remove user for the application.
 
 ```
 	// instance of agora engine
@@ -152,11 +152,11 @@ The `HelloUnityVideo` class has two methods for loading / unloading the Agora RT
 
 The `loadEngine()` method initializes the Agora RTC engine.
 
-1. Set debugging logs for the method initialization and if `mRtcEngine` is not `null`. If `mRtcEngine` exists, execute a `return` as the RTC engine has already been initalized.
+1. Set debugging logs for the method initialization and if `mRtcEngine` is not `null`. If `mRtcEngine` exists, execute a `return` as the RTC engine has already been initialized.
 
-2. Initialize the engine with the `appId` using `IRtcEngine.getEngine()`
+2. Initialize the engine with the `appId` using `IRtcEngine.getEngine()`.
 
-3. Enable Agora logging by setting the following log filters using `mRtcEngine.SetLogFilter()`
+3. Enable Agora logging by setting the following log filters using `mRtcEngine.SetLogFilter()`.
 
 Filter|Description
 ---|---
@@ -190,9 +190,9 @@ Filter|Description
 
 The `unloadEngine()` method destroys the Agora RTC engine.
 
-1. Set debugging logs for the method initialization
+1. Set debugging logs for the method initialization.
 
-2. Ensure `mRtcEngine` is not `null` before destroying the engine using `IRtcEngine.Destroy()` and setting `mRtcEngine` to `null`
+2. Ensure `mRtcEngine` is not `null` before destroying the engine using `IRtcEngine.Destroy()` and setting `mRtcEngine` to `null`.
 
 ```
 	// unload agora engine
@@ -220,13 +220,13 @@ The `join()` method joins the user to the specified `channel`, sets event listen
 
 2. Set the following callbacks for `mRtcEngine`:
 
-	**Note:** These callback are optional for the sample application, but are useful for extending the functionality of the application.
+	**Note:** These callbacks are optional for the sample application, but are useful for extending the functionality of the application.
 
 Event Listener|Method Value|Description
 ---|---|---
-`OnJoinChannelSuccess`|`onJoinChannelSuccess`|Detects when the channel is successfully joined
-`OnUserJoined`|`onUserJoined`|Detects when a user successfully joins the channel
-`OnUserOffline`|`onUserOffline`|Detects when a user goes offline
+`OnJoinChannelSuccess`|`onJoinChannelSuccess`|Detects when the channel is successfully joined.
+`OnUserJoined`|`onUserJoined`|Detects when a user successfully joins the channel.
+`OnUserOffline`|`onUserOffline`|Detects when a user goes offline.
 
 3. Enable video and set its callback using `mRtcEngine.EnableVideo()` and `mRtcEngine.EnableVideoObserver()`.
 
@@ -299,7 +299,7 @@ Set `go` to the `GameObject` with the name `Cylinder`.
 
 - If `go` is not `null`
 
-	1. Create a new `VideoSurface` object using  `go.GetComponent<VideoSurface> ()`
+	1. Create a new `VideoSurface` object using  `go.GetComponent<VideoSurface> ()`.
 	2. Add `onTransformDelegate` to the existing  `o.mAdjustTransfrom` value.
 
 ```
@@ -325,15 +325,15 @@ The `onTransformDelegate()` delegate method detects transform changes for a `Gam
 
 Transform Property|Value|Description
 ---|---|---
-`position`|`new Vector3 (0f, 2f, 0f)`|Transform position
-`localScale`|`new Vector3 (2.0f, 2.0f, 1.0f)`|Transform scale on the local level
-`Rotate`|`0f, 1f, 0f`|Transform rotation
+`position`|`new Vector3 (0f, 2f, 0f)`|Transform position.
+`localScale`|`new Vector3 (2.0f, 2.0f, 1.0f)`|Transform scale on the local level.
+`Rotate`|`0f, 1f, 0f`|Transform rotation.
 
-- Otherwise, set the rotate transform property to `0.0f, 1.0f, 0.0f` using `transform.Rotate()`. 
+- Otherwise, set the rotate transform property to `0.0f, 1.0f, 0.0f` using `transform.Rotate()`.
 
 ```
-	// delegate: adjust transfrom for game object 'objName' connected with user 'uid'
-	// you could save information for 'uid' (e.g. which GameObject is attached)
+	// delegate: Adjust transform for game object 'objName' connected with user 'uid'.
+	// You could save information for 'uid' (e.g. which GameObject is attached).
 	private void onTransformDelegate (uint uid, string objName, ref Transform transform)
 	{
 		if (uid == 0) {
@@ -375,13 +375,13 @@ The `onUserJoined()` event listener detects when a remote user joins the channel
 
 Set a debug log for the remote user's `uid` that joins the channel using `Debug.Log ()` and retrieve the `GameObject` with the name `uid.ToString()` using `GameObject.Find()`.
 
-If `go` is `null`, set its `name` property to `uid.ToString ()` and create a new `VideoSurface` object using `go.AddComponent<VideoSurface> ()`. Apply the following to `o`
+If `go` is `null`, set its `name` property to `uid.ToString ()` and create a new `VideoSurface` object using `go.AddComponent<VideoSurface> ()`. Apply the following to `o`.
 
-1. Set the user ID using `o.SetForUser()`
-2. Add `onTransformDelegate` to the `mAdjustTransfrom` property
-3. Enable it by passing `true` into `o.SetEnable()`
-4. Set the `transform` property values `Rotate`, `position`, and `localScale`
-	
+1. Set the user ID using `o.SetForUser()`.
+2. Add `onTransformDelegate` to the `mAdjustTransfrom` property.
+3. Enable it by passing `true` into `o.SetEnable()`.
+4. Set the `transform` property values `Rotate`, `position`, and `localScale`.
+
 If `go` is not `null`, set `mRemotePeer` to `uid`.
 
 
@@ -399,7 +399,7 @@ If `go` is not `null`, set `mRemotePeer` to `uid`.
 			return; // reuse
 		}
 
-		// create a GameObject and assigne to this new user
+		// create a GameObject and assign to this new user
 		go = GameObject.CreatePrimitive (PrimitiveType.Plane);
 		if (!ReferenceEquals (go, null)) {
 			go.name = uid.ToString ();
@@ -427,11 +427,11 @@ The `onUserOffline()` event listener detects when a user goes offline.
 
 2. Retrieve the `GameObject` with the name `uid.ToString()` using `GameObject.Find()`.
 
-3. If `go` is `null`, destroy `go` by passing it into the `Destroy()` method
+3. If `go` is `null`, destroy `go` by passing it into the `Destroy()` method.
 
 ```
 	// When remote user is offline, this delegate will be called. Typically
-	// delete the GameObject for this user
+	// delete the GameObject for this user.
 	private void onUserOffline(uint uid, USER_OFFLINE_REASON reason)
 	{
 		// remove video stream
@@ -458,13 +458,13 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class Home : MonoBehaviour {
-	
+
 	...
-	
-}	
+
+}
 ```
 
-The remaining code in this section are contained within the `Home` class declaration.
+The remaining code in this section is contained within the `Home` class declaration.
 
 - [Declare Initialization Methods and Variables](#declare-initialization-methods-and-variables)
 - [Create Join / Leave UI Functionality](#create-join-leave-ui-functionality)
@@ -476,11 +476,11 @@ The remaining code in this section are contained within the `Home` class declara
 The `Start()` and `Update()` methods are empty method declarations and can be used for added initialization and update functionality.
 
 ```
-	// Use this for initialization
+	// Use this for initialization.
 	void Start () {
 	}
 
-	// Update is called once per frame
+	// Update is called once per frame.
 	void Update () {
 	}
 ```
@@ -488,15 +488,15 @@ The `Start()` and `Update()` methods are empty method declarations and can be us
 The `Home` class declares a single `HelloUnityVideo` object initialized to `null`. This object is used to reference the functionality in the class discussed in the [`HelloUnityVideo`](#create-the-hellounityvideo-class) section.
 
 ```
-	static HelloUnityVideo app = null;	
+	static HelloUnityVideo app = null;
 ```
 
 #### Create Join / Leave UI Functionality
 
 The `onButtonClicked()` method is applied to the **JoinButton** and **LeaveButton** UI objects. This method determines if the user should join or leave the channel.
 
-- If the button's `name` is `JoinButton` invoke `onJoinButtonClicked()`.
-- If the button's `name` is `LeaveButton` invoke `onLeaveButtonClicked()`
+- If the button's `name` is `JoinButton`, invoke `onJoinButtonClicked()`.
+- If the button's `name` is `LeaveButton`, invoke `onLeaveButtonClicked()`
 
 **Note:** `JoinButton` and `LeaveButton` are the object names in the Unity scenes, not the actual display text shown to the user.
 
@@ -516,12 +516,12 @@ The `onButtonClicked()` method is applied to the **JoinButton** and **LeaveButto
 
 The `onJoinButtonClicked()` method is applied to the **Join** button object.
 
-1. Retrieve the `ChannelName` using `GameObject.Find()`
-2. Declare a new `InputField` class using `go.GetComponent<InputField>()`
-3. If `app` is equal to `null`, create a new `HelloUnityVideo` class and load the Agora RTC engine using `app.loadEngine()`
-4. Join the channel specified by `field.text` using `app.join()`
-5. Add `OnLevelFinishedLoading` to the scene loading event listener `SceneManager.sceneLoaded`
-6. Load `SceneHelloVideo` using `SceneManager.LoadScene()`
+1. Retrieve the `ChannelName` using `GameObject.Find()`.
+2. Declare a new `InputField` class using `go.GetComponent<InputField>()`.
+3. If `app` is equal to `null`, create a new `HelloUnityVideo` class and load the Agora RTC engine using `app.loadEngine()`.
+4. Join the channel specified by `field.text` using `app.join()`.
+5. Add `OnLevelFinishedLoading` to the scene loading event listener `SceneManager.sceneLoaded`.
+6. Load `SceneHelloVideo` using `SceneManager.LoadScene()`.
 
 ```
 	private void onJoinButtonClicked() {
@@ -548,10 +548,10 @@ The `onLeaveButtonClicked()` method is applied to the **Leave** button object.
 
 Ensure `app` is not `null` and execute the following:
 
-1. Leave the channel using `app.leave()`
-2. Unload the Agora RTC engine using `app.unloadEngine()`
-3. Set `app` to `null`
-4. Load `SceneHome` using `SceneManager.LoadScene()`
+1. Leave the channel using `app.leave()`.
+2. Unload the Agora RTC engine using `app.unloadEngine()`.
+3. Set `app` to `null`.
+4. Load `SceneHome` using `SceneManager.LoadScene()`.
 
 ```
 	private void onLeaveButtonClicked() {
@@ -566,13 +566,13 @@ Ensure `app` is not `null` and execute the following:
 
 #### Create Event Listener
 
-The `Home` class declares a single event listener `OnLevelFinishedLoading()` to detect when a scene has finished loading. 
+The `Home` class declares a single event listener `OnLevelFinishedLoading()` to detect when a scene has finished loading.
 
 If the `scene.name` is `SceneHelloVideo`:
 
 - Ensure `app` is not `null` and invoke `app.onSceneHelloVideoLoaded()` to tell the `HelloUnityVideo` that the scene finished loading.
 
-- Remove the `OnLevelFinishedLoading` event listener from `SceneManager.sceneLoaded`
+- Remove the `OnLevelFinishedLoading` event listener from `SceneManager.sceneLoaded`.
 
 ```
 	public void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode) {
